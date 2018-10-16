@@ -1,6 +1,6 @@
 <template>
   <ul v-if="currRecipe">
-    <li v-for="recipe in recipes" @click="handleClick(recipe)" :class="{selected: currRecipe.recipe === recipe.recipe }" >{{ recipe.recipe.replace(/-/g, " ") }}</li>
+    <li v-for="recipe in recipes" @click="handleClick(recipe)" :class="{selected: currRecipe.recipe === recipe.recipe }">{{ recipe.recipe.replace(/-/g, " ") }}</li>
   </ul>
 </template>
 
