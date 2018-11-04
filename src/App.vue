@@ -3,7 +3,7 @@
     <header-nav :handleModal="toggleModal" />
     <recipe-list :recipes="recipes" :currRecipe="currRecipe.recipe ? currRecipe : JSON.parse(currRecipe)" :handleClick="setRecipe"/>
     <recipe-view :currRecipe="currRecipe.recipe ? currRecipe : JSON.parse(currRecipe)" :handleDelete="deleteRecipe" :handleModal="toggleModal"/>
-    <modal :type="type" :toggleModal="toggleModal" :id="type === 'edit' ? recipes.findIndex(r => r.recipe === currRecipe.recipe) : ''" :handleSubmit="type === 'edit' ? submitRecipe : addRecipe" :currRecipe="currRecipe" />
+    <modal v-if="modal" :type="type" :toggleModal="toggleModal" :id="type === 'edit' ? recipes.findIndex(r => r.recipe === currRecipe.recipe) : ''" :handleSubmit="type === 'edit' ? submitRecipe : addRecipe" :currRecipe="currRecipe" />
   </div>
 </template>
 
